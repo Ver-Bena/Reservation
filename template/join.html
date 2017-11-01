@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>회원가입</title>
+
+    <!-- Bootstrap -->
+    <link href="../css/bootstrap.css" rel="stylesheet">
+    <!-- Custom style -->
+    <link rel="stylesheet" href="../css/style.css" media="screen" title="no title" charset="utf-8">
+  </head>
+  <body>
+      <article class="container">
+
+        <div class="page-header">
+          <h1>회원가입</h1>
+        </div>
+
+        <div class="col-md-6 col-md-offset-3">
+          <form method = "post" id = "joinForm">
+            <p><font color = "red">*</font>표시가 되어있는 항목은 필수적으로 입력해야 하는 항목입니다.
+            
+            <div class="form-group">
+              <label for="id">ID</label>
+              <div class="input-group">
+                <input type="text" class="form-control" id= "id" name = "id" 
+                placeholder="ID" pattern = "(?=^.{8,20}$)(?=.*\d)(?=.*[a-z])(?!.*\s).*$" required>
+                <span class="input-group-btn">
+                  <input type = "button" class="btn btn-success" id = "check_id" value = "ID 중복 체크">
+                </span>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="password"><font color = "red">*</font>비밀번호</label>
+              <input type="password" class="form-control" id="password" name = "password" 
+              placeholder="비밀번호" pattern = "(?=^.{8,20}$)(?=.*\d)(?=.*[a-z])(?!.*\s).*$" required>
+              <p class="help-block">ID와 비밀번호는 8자 이상 20자 이하의 영문.숫자 혼용으로 작성하여 주시기 바랍니다.</p>
+              <div id = "checkPW"></div>
+            </div>
+
+            <div class="form-group">
+              <label for="password_cfm"><font color = "red">*</font>비밀번호 확인</label>
+              <input type="password" class="form-control" id="password_cfm" name = "password_cfm" 
+              placeholder="비밀번호 확인" pattern = "(?=^.{8,20}$)(?=.*\d)(?=.*[a-z])(?!.*\s).*$" required>
+              <p class="help-block">비밀번호 확인을 위해 다시 한 번 입력해주세요.</p>
+            </div>
+
+            <div class="form-group">
+              <label for="name"><font color = "red">*</font>이름</label>
+              <input type="text" class="form-control" id="name" name = "name" placeholder="이름을 입력해 주세요" required>
+            </div>
+
+            <div class="form-group">
+              <label for="birthday">생년월일</label>
+              <input type="date" class="form-control" id="birthday" name = "birthday">
+            </div>
+
+            <div class="form-group">
+              <label for="tel"><font color = "red">*</font>전화번호</label>
+                <input type="tel" class="form-control" id="tel" placeholder="- 없이 입력해 주세요" pattern = "[0-9]{10}[0-9]?" required>
+            </div>
+
+            <div class="form-group">
+              <label for="email"><font color = "red">*</font>이메일 인증</label>
+              <div class="input-group">
+                <input type="email" class="form-control" id="email" name = "email" placeholder="이메일을 입력해 주세요" required>
+                <span class="input-group-btn">
+                  <input type = "button" class="btn btn-success" id = "send_vc" value = "인증번호 전송">
+                </span>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="vrf_code"><font color = "red">*</font>인증번호 입력</label>
+              <div class="input-group">
+                <input type="text" class="form-control" id="vrf_code" name = "vrf_code" placeholder="인증번호" maxlength= "4" required>
+                <span class="input-group-btn">
+                  <input type = "button" class="btn btn-success" id = "cfm_vc" value = "인증번호 확인">
+                </span>
+              </div>
+            </div>
+
+            <div class="form-group">
+                <label><font color = "red">*</font>약관 동의</label>
+              <div data-toggle="buttons">
+              <label class="btn btn-primary active">
+                  <span class="fa fa-check"></span>
+                  <input type="checkbox" id="agree" required>
+              </label>
+              <a href="#">이용약관</a>에 동의합니다.
+              </div>
+            </div>
+
+            <div class="form-group text-center">
+              <input type="submit" class="btn btn-info" value = "회원가입"><i class="fa fa-check spaceLeft"></i>
+              <input type="submit" class="btn btn-warning" value = "가입취소"><i class="fa fa-times spaceLeft"></i>
+            </div>
+            
+          </form>
+        </div>
+      </article>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins)-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src = "../js/join.js"></script>
+  </body>
+</html>

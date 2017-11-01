@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <title>예약 변경</title>
+        <link rel="stylesheet" href="../css/normalize.css">
+        <link rel="stylesheet" href="../css/main.css" media="screen" type="text/css">
+        <link rel="stylesheet" href="../css/bootstrap.css">
+        <link rel="stylesheet" href="../css/style-portfolio.css">
+        <link rel="stylesheet" href="../css/picto-foundry-food.css" />
+        <link rel="stylesheet" href="../css/jquery-ui.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="../css/font-awesome.min.css" rel="stylesheet">
+    </head>
+
+    <body>
+        <!-- ============ Reservation  ============= -->
+
+        <section  id="reservation"  class="description_content">
+            <div class="featured background_content">
+                <h1>Reserve a Table!</h1>
+            </div>
+            <div class="text-content container"> 
+                <div class="inner contact">
+                    <!-- Form Area -->
+                    <div class="contact-form">
+                        <!-- Form -->
+                        <form id="member_rsvForm" method="post">
+                            <!-- Left Inputs -->
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-lg-8 col-md-6 col-xs-12">
+                                        <div class="row">
+                                            <div class="col-lg-6 col-md-6 col-xs-6">
+                                                <input type="text" name="name" id="name" required class="form" placeholder="이름" value = "{{ .name }}" disabled/>
+                                                <input type="tel" name="tel" id="tel" required class="form" pattern="[0-9]{10}[0-9]?" placeholder="전화번호(- 없이 입력해 주세요)" value = "{{ .tel }}" disabled/>
+                                                <input type="email" name="email" id="email" required class="form" placeholder="이메일" value = "{{ .email }}"/>
+                                                <input type="number" name="people_cnt" id="people_cnt" required class="form" placeholder="인원수" min = 0 max = 40 value = "{{ .people_cnt }}"/>
+                                                <input type="text" name="sum" id="sum" required class="form" placeholder="합계" disabled/>
+                                            </div>
+
+                                            <div class="col-lg-6 col-md-6 col-xs-6">
+                                                <input type="date" name="rsv_date" id="rsv_date" required="required" class="form" placeholder="예약날짜" value = "{{ .rsv_date }}"/>
+                                                <input type="time" name="rsv_time" id="rsv_time" required="required" class="form" placeholder="예약시간" value = "{{ .rsv_time }}"/>
+                                                <textarea name="requests" id="requests" class="form" placeholder="요청사항" rows = 8 value = "{{ .requests }}"></textarea>
+                                            </div>
+
+                                            <div class="col-xs-6 ">
+                                                <!-- Send Button -->
+                                                <input type="button" id="calculate" name="calculate" class="text-center form-btn form-btn" value = "계산하기">
+                                            </div>
+                                            
+                                            <div class="col-xs-6 ">
+                                                <button type="submit" id="submit" name="submit" class="text-center form-btn form-btn">수정하기</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="col-lg-4 col-md-6 col-xs-12">
+                                        <!-- Message -->
+                                        <div class="right-text">
+                                            <h2>DISCOUNT</h2><hr>
+                                            <p>브론즈, 비회원 : 0%</p>
+                                            <p>실버 : 5% (예약 10번 이상)</p>
+                                            <p>골드 : 10% (예약 30번 이상)</p>
+                                            <p>다이아 : 25% (예약 60번 이상)</p>
+                                            <p>생일 할인 : +10% (예약 당일 기준)</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Clear -->
+                            <div class="clear"></div>
+                        </form>
+                    </div><!-- End Contact Form Area -->
+                </div><!-- End Inner -->
+            </div>
+        </section>
+
+        <!-- ============ Footer Section  ============= -->
+
+        <footer class="sub_footer">
+            <div class="container">
+                <div class="col-md-4"><p class="sub-footer-text text-center">Back to <a href="#top">TOP</a></p>
+                </div>
+                <div class="col-md-4"><p class="sub-footer-text text-center">Built With Care By <a href="#" target="_blank">Us</a></p></div>
+            </div>
+        </footer>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script type="text/javascript" src="../js/alien_change_order.js" ></script>
+        <script type="text/javascript" src="../js/bootstrap.min.js" ></script>
+    </body>
+</html>

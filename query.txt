@@ -1,0 +1,40 @@
+create database Restaurant;
+use Restaurant
+
+create table members_order(
+	id char(20) not null primary key,
+	name char(20) not null,
+	tel char(11) not null,
+	grade char(5) not null,
+	rsv_date date not null,
+	rsv_time time not null,
+	people_num int not null,
+	requests char(100)
+);
+
+
+create table members(
+	id char(20) not null primary key,
+	name char(20) not null,
+	tel char(20) not null,
+	email varchar(20) not null,
+	password char(20) not null,
+	grade char(5) default '브론즈' not null,
+	birthday date,
+    	rsv_cnt int default 0 not null
+);
+
+insert into members_order values("good0503", "이다경", "01064940971", "다이아", "2016-02-28", "13:30:00", 4, "어린이 좌석 두 개");
+insert into members_order values("good0971", "이성호", "01091200971", "브론즈", "2016-03-12", "09:00:00", 2, null);
+insert into members_order values("jung2820", "정은주", "01088322820", "골드", "2016-02-09", "13:30:00", 3, "생일테이블로 자리를 배치해주세요");
+insert into members_order values("jem0703", "정은미", "01053390971", "실버", "2016-02-28", "13:30:00", 5,  null);
+
+select * from members_order;
+select * from members;
+
+insert into members (id, name, tel, email, password, birthday) values("good0503", "이다경", "01064940971", "good0503@naver.com", "good0503", "1999-05-03");
+insert into members (id, name, tel, email, password, birthday) values("good0971", "이성호", "01091200971", "good0971@naver.com", "good0971", "1999-05-03");
+insert into members (id, name, tel, email, password, birthday) values("jung2820", "정은주", "01088322820", "jung2820@naver.com", "jung2820", "1985-02-17");
+insert into members (id, name, tel, email, password, birthday) values("jem0703", "정은미", "01053390971", "jem0703@naver.com", "jem0703", "1971-06-05");
+
+drop table members_order;

@@ -1,0 +1,39 @@
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>예약내역 조회</title>
+    <!-- Bootstrap -->
+    <link href="../css/login.css" rel="stylesheet">
+  </head>
+  <body>
+      <div class="container">
+          <div class="row">
+              <div class="page-header">
+                  <h2>본인인증</h2>
+              </div>
+              <div class="col-md-3">
+                <div class="login-box well">
+                    <form method="post" id = "pwForm" action = "/member_rsv/inquire_confirm_pw">
+                        <div class="form-group">
+                            <label for="ordernum">비밀번호</label>
+                            <input name="password" id="password" placeholder="Password" type="password" class="form-control" required/>
+                        </div>
+                        
+                        <div class="form-group">
+                            <input type="submit" class="btn btn-default btn-login-submit btn-block m-t-md" value="확인" />
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+ 
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <!-- Include all compiled plugins (below), or include individual files as needed -->
+  <script src="../js/alien_order_confirm_pw.js"></script>
+  </body>
+  </html>
